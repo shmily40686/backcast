@@ -1,22 +1,16 @@
 var VideoListEntryView = Backbone.View.extend({
- // template: _.template('<div class="movie"> \
- //                          <div class="like"> \
- //                            <button><img src="images/<%- like ? \'up\' : \'down\' %>.jpg"></button> \
- //                          </div> \
- //                          <span class="title"><%- title %></span> \
- //                          <span class="year">(<%- year %>)</span> \
- //                          <div class="rating">Fan rating: <%- rating %> of 10</div> \
- //                        </div>')
- 
-  initialize: function(){
-     // this.on('change',function(){
-     //  _.each(this.template, this.render(model){})
-     // },this)
-   },
+
+  events: {
+    'click .video-list-entry-title' : 'handler'
+  },
    
   render: function() {
     this.$el.html(this.template(this.model.attributes));
     return this;
+  },
+  
+  handler: function(){
+    this.model.select();
   },
 
   template: templateURL('src/templates/videoListEntry.html')
