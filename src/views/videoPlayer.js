@@ -1,5 +1,7 @@
 var VideoPlayerView = Backbone.View.extend({
 
+  el: '.video-player',
+
   initialize : function() {
     this.listenTo(this.collection, 'select', this.render);
   },
@@ -7,7 +9,7 @@ var VideoPlayerView = Backbone.View.extend({
   
   render: function() {
     this.$el.html('<div class="loading">Please wait...</div>');
-    return this;
+    return this.$el;
   },
   
   // selectVideo: function() {

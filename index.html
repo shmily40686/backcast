@@ -14,7 +14,6 @@
   <div id="app">
     <h5 style="border:none;">
       <br/><br/>this message will disappear when <em>app</em> view is correctly rendered<br/><br/><br/>
-    <div id="videos-list"></div>
     </h5>
   </div>
 
@@ -32,8 +31,9 @@
 
   <script>
     backboneReady(() => {
-      var videos = new Videos(window.exampleVideoData);
-      new AppView({el: $('#app'), collection: videos}).render();
+      // var videos = new Videos(window.exampleVideoData);
+      // new AppView({el: $('#app'), collection: videos}).render();
+      new AppView();
     });
     
     // $(function(){
